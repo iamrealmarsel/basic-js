@@ -23,10 +23,11 @@ const chainMaker = {
     if (
       !(typeof position === 'number') ||
       !(position % 1 === 0) ||
-      position > chain.length ||
+      position > this.getLength() ||
       position <= 0
     ) {
-      throw new Error("You can't remove incorrect link!");
+      chain = [];
+      throw new Error("You can\'t remove incorrect link!");
     }
 
     chain.splice(position - 1, 1);
